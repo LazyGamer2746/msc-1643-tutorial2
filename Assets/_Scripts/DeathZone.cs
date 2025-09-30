@@ -20,7 +20,10 @@ public class DeathZone : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            Instantiate(ballPreFab, startPos.position, Quaternion.identity);
+            if (GameManager.playing)
+            {
+                Instantiate(ballPreFab, startPos.position, Quaternion.identity);
+            }
         }
         
     }
